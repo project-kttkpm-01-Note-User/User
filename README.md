@@ -70,9 +70,9 @@ ADDNOTE:
 	 }
  Trả về: 
 
-
  {
     "id": 7,
+    
     "title": "test3",
     "content": "Dương Diễm Phước",
     "createdAt": "2021-12-01T14:05:46.828+00:00",
