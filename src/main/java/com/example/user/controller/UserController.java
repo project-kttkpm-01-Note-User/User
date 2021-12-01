@@ -14,18 +14,16 @@ public class UserController {
     private UserServiceImpl service;
 
     @PostMapping
-    public String addUser(@RequestBody User user){
+    public User addUser(@RequestBody User user){
         try {
             User u= service.getUserByUserName(user.getUserName());
             if(u == null){
-                service.addUser(user);
-
-                return "Thêm thành công";
+                return service.addUser(user);
             }
         }catch(Exception e){
 
         }
-        return "username đã tôn tại";
+        return null;
     }
 
     @GetMapping("/{id}")
@@ -39,7 +37,8 @@ public class UserController {
     }
 
     @GetMapping("/username")
-    public User findByid(@RequestParam String userName){
+    public User findByUserName(@RequestParam String userName){
+
         return service.getUserByUserName(userName);
     }
 
